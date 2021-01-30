@@ -47,7 +47,35 @@ public class MainActivity extends AppCompatActivity {
                 respuesta *=i;
             }
         }
+        optOperacionesBasicas = findViewById(R.id.optporcentaje);
+        if( optOperacionesBasicas.isChecked() ) {
+            respuesta = num1 * num2/ 100;
+        }
+        Spinner cboOperacionesBasicas = findViewById(R.id.cboOperacionesBasicas);
+        switch (cboOperacionesBasicas.getSelectedItemPosition()){
+            case 0:
+                respuesta = num1+num2;
+                break;
+            case 1:
+                respuesta = num1-num2;
+                break;
+            case 2:
+                respuesta = num1*num2;
+                break;
+            case 3:
+                respuesta = num1/num2;
+                break;
+            case 4:
+                respuesta = Math.pow(num1,num2);
+                break;
+            case 5:
+                respuesta = num1 * num2 / 100;
+                break;
+            case 6:
+                respuesta = num1 % num2;
+                break;
 
+        }
         tempVal = findViewById(R.id.lblRespuesta);
         tempVal.setText("Respuesta: "+ respuesta );
     }

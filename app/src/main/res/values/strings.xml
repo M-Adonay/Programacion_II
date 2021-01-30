@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string-array name="cbOpercionesBasicas">
+    <item>Suma</item>
+    <item>Resta</item>
+    <item>Multiplicacion</item>
+    <item>Division</item>
+    <item>Factorizacion</item>
+    <item>Porcentaje</item>
+    <item>Exponenciacion</item>
+    <item>Raiz cuadrada</item>
+    <item>Raiz Cubica</item>
+    <item>Modulo(Resto)</item>
+    <item>Mayor de 2 numeros</item>
+    </string-array>
 </resources>
