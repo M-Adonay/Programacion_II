@@ -47,36 +47,51 @@ public class MainActivity extends AppCompatActivity {
                 respuesta *=i;
             }
         }
-        optOperacionesBasicas = findViewById(R.id.optporcentaje);
-        if( optOperacionesBasicas.isChecked() ) {
-            respuesta = num1 * num2/ 100;
-        }
         Spinner cboOperacionesBasicas = findViewById(R.id.cboOperacionesBasicas);
-        switch (cboOperacionesBasicas.getSelectedItemPosition()){
+        switch (cboOperacionesBasicas.getSelectedItemPosition()) {
             case 0:
-                respuesta = num1+num2;
+                respuesta = num1 + num2;
                 break;
             case 1:
-                respuesta = num1-num2;
+                respuesta = num1 - num2;
                 break;
             case 2:
-                respuesta = num1*num2;
+                respuesta = num1 * num2;
                 break;
             case 3:
-                respuesta = num1/num2;
+                respuesta = num1 / num2;
                 break;
             case 4:
-                respuesta = Math.pow(num1,num2);
+                double factor = 1;
+                while (num1 != 0) {
+                    factor = factor * num1;
+                    num1--;
+                    System.out.println(factor);
+                    respuesta = num1;
+                    break;
+                }
                 break;
             case 5:
                 respuesta = num1 * num2 / 100;
                 break;
             case 6:
+                respuesta = Math.pow(num1, num2);
+                break;
+            case 7:
+                respuesta = Math.pow(num1, 1/num2);
+                break;
+            case 8:
                 respuesta = num1 % num2;
                 break;
-
+            case 9:
+                if (num1 < num2) {
+                    respuesta = num2;
+                } else {
+                    respuesta = num1;
+                    break;
+                }
         }
         tempVal = findViewById(R.id.lblRespuesta);
-        tempVal.setText("Respuesta: "+ respuesta );
+        tempVal.setText("Respuesta: " + respuesta);
     }
 }
